@@ -6,7 +6,11 @@ export default function Navbar() {
       <header className="bg-[#edeeef] ">
         <nav className="flex items-end  h-20 gap-4 justify-around ">
           <div className="flex justify-center items-center m-auto mr-auto">
-            <img className="h-15 w-90 " src="/public/logo png (1).png" alt="" />
+            <img
+              className="h-15 w-90 "
+              src="/logo.png"
+              alt="Ingenieria Metalurgica"
+            />
           </div>
           <ul className=" text-black flex flex-row  items-center gap-10 p-4  w-full text-[20px] font-medium mr-18 ">
             <li className="mr-auto"></li>

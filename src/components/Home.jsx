@@ -61,7 +61,7 @@ export default function Home() {
             <div>
               <img
                 className=" w-125 rounded-lg h-90 object-cover"
-                src="../../public/Charla.jpeg"
+                src="Charla.jpeg"
                 alt="6ta Jornada Metalurgica"
               />
             </div>
@@ -78,14 +78,14 @@ export default function Home() {
                   <li>
                     <img
                       className="w-8 h-8 object-cover"
-                      src="/public/link.png"
+                      src="/link.png"
                       alt="Página Web"
                     />
                   </li>
                   <li>
                     <img
                       className="w-10 h-10 "
-                      src="/public/instagram.png"
+                      src="/instagram.png"
                       alt="Instagram"
                     />
                   </li>
