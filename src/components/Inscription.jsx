@@ -9,6 +9,8 @@ export default function Inscription() {
     asistencia: false,
     presentacion: false,
   });
+  const onSubmit = async (e) => {
+    e.preventDefault();
 
   const [file, setFile] = useState([]);
 
@@ -60,7 +62,7 @@ export default function Inscription() {
             adicionales.
           </span>
         </div>
-        <form className="flex flex-col bg-orange-400 w-240 h-full  justify-start items-start  mt-10  text-center rounded-2xl m-auto mb-20  wrap">
+        <form onSubmit={onSubmit} className="flex flex-col bg-orange-400 w-240 h-full  justify-start items-start  mt-10  text-center rounded-2xl m-auto mb-20  wrap">
           <div className="flex flex-col gap-3 justify-start items-start m-auto ">
             <Check checkBoxes={checkBoxes} onChange={handleCheckboxChange} />
 
@@ -158,7 +160,7 @@ export default function Inscription() {
             )}
           </div>
           <button
-            type="submit"
+            type="reset"
             className=" text-white font-bold  text-[24px] rounded-2xl w-150 h-14 m-auto mb-5 bg-orange-500 hover:bg-orange-600 focus:ring-orange-500 focus:ring-offset-2 ">
             Inscribirse
           </button>
