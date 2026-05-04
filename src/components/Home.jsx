@@ -1,13 +1,14 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-
+import { Link } from "react-router-dom";
+import Inscription from "./Inscription";
 export default function Home() {
   return (
     <>
       <Navbar />
 
-      <div className=" bg-white h-full er mt-10 rounded-2xl flex flex-col justify-center items-center gap-10  ">
+      <div className=" bg-white h-full  mt-10 rounded-2xl flex flex-col justify-center items-center gap-10  min-h-screen">
         <div className="flex flex-row gap-10 p-6 ">
           <div>
             <div className=" flex flex-col items-center justify-center leading-none">
@@ -30,13 +31,13 @@ export default function Home() {
               </h1>
             </div>
 
-            <p className="text-[20px] mb-1 font-medium text-center ">
+            <p className="text-[25px] mb-1 font-medium text-center ">
               20 y 21 de Agosto
             </p>
-            <p className="text-[20px] mb-4 font-normal text-center">
+            <p className="text-[22px] mb-4 font-medium text-center">
               San Nicolás de los Arroyos, Buenos Aires, Argentina
             </p>
-            <p className=" w-200 text-[18px] text-start">
+            <p className=" w-200 text-[20px] text-start">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore
               aut ea saepe neque consequatur. Iure, consequuntur voluptatibus.
               Incidunt eveniet, iure nostrum repellat in omnis nobis provident
@@ -60,7 +61,7 @@ export default function Home() {
           <div className="flex flex-col gap-9 items-center justify-center">
             <div>
               <img
-                className=" w-125 rounded-lg h-90 object-cover"
+                className=" w-125 rounded-lg h-100 object-cover"
                 src="Charla.jpeg"
                 alt="6ta Jornada Metalurgica"
               />
@@ -68,25 +69,32 @@ export default function Home() {
             <div className="flex flex-col justify-center  m-auto  items-center gap-4 ">
               <p className="text-3xl font-bold">¡Sumate a las jornadas!</p>
               <button className="bg-[#ff8017] hover:bg-[#e67414] text-white font-bold py-2 px-4 rounded-md w-100 h-20 text-3xl">
-                INSCRIPCIÓN
+                <Link to="/Inscription">INSCRIPCIÓN</Link>
               </button>
             </div>
             <div className="flex  w-full flex-col gap-4  items-center justify-center p-6  ">
               <h1 className="text-3xl font-semibold ">Encontranos en</h1>
               <div>
-                <ul className="flex  flex-row gap-5 ">
-                  <li>
-                    <img
-                      className="w-8 h-8 object-cover"
-                      src="/link.png"
-                      alt="Página Web"
-                    />
-                  </li>
+                <ul className="flex  flex-row gap-5 items-center justify-center">
                   <li>
                     <img
                       className="w-10 h-10 "
                       src="/instagram.png"
                       alt="Instagram"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      className="w-10 h-9 "
+                      src="/email.png"
+                      alt="Correo Electrónico"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      className="w-9 h-10 "
+                      src="/internet.png"
+                      alt="Página Web"
                     />
                   </li>
                 </ul>
