@@ -17,10 +17,15 @@ export default function Navbar() {
             <li className="navbar-li">
               <Link to="/">Inicio</Link>
             </li>
-            <li className="navbar-li">Historia</li>
+            <li className="navbar-li">
+              <Link to="/Historia">Historia</Link>
+            </li>
             <li className="navbar-li">Galería</li>
             <li className="navbar-li">Novedades</li>
             <li className="navbar-li">Contacto</li>
+            <li className="navbar-li">
+              <Link to="/Login">Login</Link>
+            </li>
           </ul>
         </nav>
       </header>

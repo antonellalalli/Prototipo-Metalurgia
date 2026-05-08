@@ -9,12 +9,14 @@ export default function Inscription() {
     asistencia: false,
     presentacion: false,
   });
-  const onSubmit = async (e) => {
-    e.preventDefault();
 
   const [file, setFile] = useState([]);
 
+  const handleRemoveFile = (fileToRemove) => {
+    setFile(file.filter((f) => f.name !== fileToRemove.name));
+  };
   const handleFileChange = (event) => {
+    event.preventDefault();
     const userfile = Array.from(event.target.files);
 
     if (userfile.length > 0) {
@@ -62,7 +64,7 @@ export default function Inscription() {
             adicionales.
           </span>
         </div>
-        <form onSubmit={onSubmit} className="flex flex-col bg-orange-400 w-240 h-full  justify-start items-start  mt-10  text-center rounded-2xl m-auto mb-20  wrap">
+        <form className="flex flex-col bg-orange-400 w-240 h-full  justify-start items-start  mt-10  text-center rounded-2xl m-auto mb-20  wrap">
           <div className="flex flex-col gap-3 justify-start items-start m-auto ">
             <Check checkBoxes={checkBoxes} onChange={handleCheckboxChange} />
 
@@ -144,24 +146,37 @@ export default function Inscription() {
                     />
                   </div>
                   <label
-                    className=" text-dark-500  font-medium text-[20px] block p-2 bg-white rounded-2xl cursor-pointer "
-                    for="work-file">
+                    className=" text-dark-500  font-medium text-[20px] block p-2 bg-white rounded-2xl cursor-pointer  hover:bg-gray-200"
+                    htmlFor="work-file">
                     Subir archivo de trabajo
                   </label>
-                  <div>
-                    {file && file.length > 0 && (
-                      <p className="text-dark-500 text-sm mt-1 whitespace-pre-line text-start">
-                        {file.map((f) => f.name).join("\n")}
-                      </p>
-                    )}
-                  </div>
+                  {file && file.length > 0 && (
+                    <div className="flex flex-col  items-start mt-2">
+                      {file.map((f, index) => (
+                        <div
+                          key={index}
+                          className="flex flex-row gap-4 items-center  ">
+                          <p>{f.name}</p>
+                          <button
+                            type="button"
+                            onClick={() => handleRemoveFile(f)}>
+                            <img
+                              className="w-8 h-8 mt-2 hover:bg-amber-700 rounded-full p-1 cursor-pointer "
+                              src="/cross.png"
+                              alt="Eliminar Archivo"
+                            />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </>
             )}
           </div>
           <button
-            type="reset"
-            className=" text-white font-bold  text-[24px] rounded-2xl w-150 h-14 m-auto mb-5 bg-orange-500 hover:bg-orange-600 focus:ring-orange-500 focus:ring-offset-2 ">
+            type="submit"
+            className=" text-white font-bold  text-[24px] rounded-2xl w-150 h-14 m-auto mb-5 bg-orange-500 hover:bg-orange-600 focus:ring-orange-500 focus:ring-offset-2 cursor-pointer ">
             Inscribirse
           </button>
         </form>
